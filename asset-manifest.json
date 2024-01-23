@@ -1,16 +1,15 @@
 {
   "files": {
     "main.css": "/westofthemoon/static/css/main.f855e6bc.css",
-    "main.js": "/westofthemoon/static/js/main.ba0fc627.js",
+    "main.js": "/westofthemoon/static/js/main.ab3bcaf2.js",
     "static/js/787.5a4e9bbf.chunk.js": "/westofthemoon/static/js/787.5a4e9bbf.chunk.js",
-    "static/media/logo.svg": "/westofthemoon/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/westofthemoon/index.html",
     "main.f855e6bc.css.map": "/westofthemoon/static/css/main.f855e6bc.css.map",
-    "main.ba0fc627.js.map": "/westofthemoon/static/js/main.ba0fc627.js.map",
+    "main.ab3bcaf2.js.map": "/westofthemoon/static/js/main.ab3bcaf2.js.map",
     "787.5a4e9bbf.chunk.js.map": "/westofthemoon/static/js/787.5a4e9bbf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.ba0fc627.js"
+    "static/js/main.ab3bcaf2.js"
   ]
 }
