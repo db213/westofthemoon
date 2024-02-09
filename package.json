@@ -2,7 +2,7 @@
   "name": "westofthemoon",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://db213.github.io/westofthemoon",
+  "homepage": "https://db213.github.io/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
@@ -20,7 +20,8 @@
     "markdown-to-jsx": "^7.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-markdown": "^9.0.1"
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.22.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
