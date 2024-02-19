@@ -20,6 +20,7 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
   return (
     <Paper
       sx={{
+        corners: 'rounded',
         position: 'relative',
         backgroundColor: 'grey.800',
         color: '#fff',
@@ -30,8 +31,6 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
         backgroundImage: `url(${post.image})`,
       }}
     >
-      {/* Increase the priority of the hero background image */}
-      {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
       <Box
         sx={{
           position: 'absolute',
@@ -51,15 +50,19 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
               pr: { md: 0 },
             }}
           >
-            <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-              {post.title}
-            </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
-              {post.description}
-            </Typography>
-            <Link variant="subtitle1" href="#">
-              {post.linkText}
-            </Link>
+            <div style={{ display: 'block', width: '100%', height: '50vh' }}>
+              <div style={{ position: 'relative', top: '30%'}}>
+                <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+                  {post.title}
+                </Typography>
+                <Typography variant="h5" color="inherit" paragraph>
+                  {post.description}
+                </Typography>
+                <Link variant="subtitle1" href="#">
+                  {post.linkText}
+                </Link>
+              </div>
+            </div>
           </Box>
         </Grid>
       </Grid>

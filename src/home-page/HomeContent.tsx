@@ -7,6 +7,7 @@ import post2 from '../posts/blog-post.2.md';
 import post3 from '../posts/blog-post.3.md';
 import MainSection from './MainSection';
 import { sidebar } from '../constants/sidebar';
+import { Fragment } from 'react';
 
 
 const mainFeaturedPost = {
@@ -41,7 +42,7 @@ const posts = [post1, post2, post3];
 
 export default function HomeContent() {
   return (
-    <main>
+    <Fragment>
       <MainFeaturedPost post={mainFeaturedPost} />
       <Grid container spacing={4}>
         {featuredPosts.map((post) => (
@@ -57,6 +58,6 @@ export default function HomeContent() {
           social={sidebar.social}
         />
       </Grid>
-    </main>
+    </Fragment>
   );
 }

@@ -7,25 +7,25 @@ import { sections } from './constants/sections';
 import { ReactNode } from 'react';
 
 
-const defaultTheme = createTheme();
-
 interface Props {
   child: ReactNode;
 }
 
 export default function WebsiteTemplate(props: Props) {
   const { child } = props;
+  const defaultTheme = createTheme();
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      <Container maxWidth="lg">
+      <Container maxWidth={false} disableGutters={true}>
         <Header title="Blog" sections={sections} />
         {child}
+        <Footer
+          title="Footer"
+          description="Something here to give the footer a purpose!"
+        />
       </Container>
-      <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
-      />
     </ThemeProvider>
   );
 }
