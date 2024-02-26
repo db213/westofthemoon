@@ -9,15 +9,16 @@ import {
 import WebsiteTemplate from './WebsiteTemplate.tsx';
 import ErrorPage from './ErrorPage.tsx';
 import PostsByCountry from './posts-by-country-page/PostsByCountry.tsx';
+import { ROUTES } from './routes/routes.ts';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: ROUTES.home,
     element: <WebsiteTemplate child={<HomeContent />} />,
     errorElement: <WebsiteTemplate child={<ErrorPage />} />,
   },
   {
-    path: "/posts-by-country",
+    path: ROUTES.postsByCountry,
     element: <WebsiteTemplate child={<PostsByCountry />} />,
   }
 ]);

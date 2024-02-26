@@ -1,61 +1,84 @@
-import * as React from 'react';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import { Fragment } from 'react';
+import { Instagram } from '@mui/icons-material';
+import { ROUTES } from './routes/routes';
+import { Grid, Typography } from '@mui/material';
+import EmailIcon from '@mui/icons-material/Email';
 
-interface HeaderProps {
-  sections: ReadonlyArray<{
-    title: string;
-    url: string;
-  }>;
-  title: string;
-}
 
-export default function Header(props: HeaderProps) {
-  const { sections, title } = props;
-
+export default function Header() {
   return (
-    <React.Fragment>
-      <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Button size="small">Subscribe</Button>
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-          sx={{ flex: 1 }}
-        >
-          {title}
-        </Typography>
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
-        </Button>
-      </Toolbar>
+    <Fragment>
       <Toolbar
         component="nav"
         variant="dense"
-        sx={{ justifyContent: 'space-between', overflowX: 'auto' }}
+        sx={{
+          justifyContent: 'space-between',
+          overflowX: 'auto',
+          minHeight: '8vh',
+          marginLeft: '2vh',
+          marginRight: '2vh',
+        }}
       >
-        {sections.map((section) => (
-          <Link
-            color="inherit"
-            noWrap
-            key={section.title}
-            variant="body2"
-            href={section.url}
-            sx={{ p: 1, flexShrink: 0 }}
+        <Button
+          color="headerText"
+          size="large"
+          href={ROUTES.home}
+        >
+          {/* TODO get logo and put here */}
+          <img src="/" />
+        </Button>
+        <Button 
+          color="headerText"
+          href={ROUTES.home}
+          size="large"
+        >
+          <Typography variant="h5">
+            Home
+          </Typography>
+        </Button>
+        <Button
+          color="headerText"
+          size="large"
+          href={ROUTES.about}
+        >
+          <Typography variant="h5">
+            About
+          </Typography>
+        </Button>
+        <Button
+          color="headerText"
+          size="large"
+          href={ROUTES.postsByCountry}
+        >
+          <Typography variant="h5">
+            Guides
+          </Typography>
+        </Button>
+        <Grid>
+          <Button
+            color="headerText"
+            href={ROUTES.instagram}
+            size="large"
           >
-            {section.title}
-          </Link>
-        ))}
+            <Instagram />
+          </Button>
+          <Button
+            color="headerText"
+            size="large"
+          >
+            <EmailIcon />
+          </Button>
+          <Button
+            color="headerText"
+            size="large"
+          >
+            <SearchIcon />
+          </Button>
+        </Grid>
       </Toolbar>
-    </React.Fragment>
+    </Fragment>
   );
 }
