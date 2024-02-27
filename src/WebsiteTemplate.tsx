@@ -1,7 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from '@mui/material/styles';
-import Header from './Header';
+import Header from './header/Header';
 import Footer from './Footer';
 import { ReactNode } from 'react';
 import { THEME } from './themes/palettes';

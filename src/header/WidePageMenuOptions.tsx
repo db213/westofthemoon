@@ -1,39 +1,21 @@
-import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import { Fragment } from 'react';
 import { Instagram } from '@mui/icons-material';
-import { ROUTES } from './routes/routes';
+import { ROUTES } from '../routes/routes';
 import { Grid, Typography } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 
 
-export default function Header() {
+export default function WidePageMenuOptions() {
+
   return (
     <Fragment>
-      <Toolbar
-        component="nav"
-        variant="dense"
-        sx={{
-          justifyContent: 'space-between',
-          overflowX: 'auto',
-          minHeight: '8vh',
-          marginLeft: '2vh',
-          marginRight: '2vh',
-        }}
-      >
-        <Button
-          color="headerText"
-          size="large"
-          href={ROUTES.home}
-        >
-          {/* TODO get logo and put here */}
-          <img src="/" />
-        </Button>
         <Button 
           color="headerText"
           href={ROUTES.home}
           size="large"
+          style={{ height: '100%' }}
         >
           <Typography variant="h5">
             Home
@@ -43,6 +25,7 @@ export default function Header() {
           color="headerText"
           size="large"
           href={ROUTES.about}
+          style={{ height: '100%' }}
         >
           <Typography variant="h5">
             About
@@ -52,6 +35,7 @@ export default function Header() {
           color="headerText"
           size="large"
           href={ROUTES.postsByCountry}
+          style={{ height: '100%' }}
         >
           <Typography variant="h5">
             Guides
@@ -78,7 +62,6 @@ export default function Header() {
             <SearchIcon />
           </Button>
         </Grid>
-      </Toolbar>
     </Fragment>
   );
 }
