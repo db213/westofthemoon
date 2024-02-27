@@ -6,6 +6,7 @@ import logo from '../assets/logo.svg';
 import { useWindowSize } from '../window-size/use-window-size';
 import WidePageMenuOptions from './WidePageMenuOptions';
 import { Typography } from '@mui/material';
+import SmallPageMenuOptions from './SmallPageMenuOptions';
 
 export default function Header() {
 
@@ -64,7 +65,7 @@ export default function Header() {
             </Typography>
           </Button>
         </div>
-        { !smallPage && <WidePageMenuOptions /> }
+        { !smallPage ? <WidePageMenuOptions /> : <SmallPageMenuOptions /> }
       </Toolbar>
     </Fragment>
   );
