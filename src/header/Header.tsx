@@ -2,11 +2,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import { Fragment, useMemo } from 'react';
 import { ROUTES } from '../routes/routes';
-import logo from '../assets/logo.svg';
 import { useWindowSize } from '../window-size/use-window-size';
 import WidePageMenuOptions from './WidePageMenuOptions';
 import { Typography } from '@mui/material';
 import SmallPageMenuOptions from './SmallPageMenuOptions';
+import Logo from '../assets/Logo';
 
 export default function Header() {
 
@@ -43,14 +43,7 @@ export default function Header() {
               paddingRight: 1,
             }}
           >
-            <img
-              src={logo}
-              height="100%"
-              style={{
-                float: 'left',
-                paddingRight: -1,
-              }}
-            />
+            <Logo fill="#285225" />
             <Typography
               variant="subtitle1"
               textTransform="lowercase"
