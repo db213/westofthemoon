@@ -1,71 +1,61 @@
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
-import Box from '@mui/material/Box';
+import { Post } from '../posts/types';
+import { ReactElement } from 'react';
 
-interface MainFeaturedPostProps {
-  post: {
-    description: string;
-    image: string;
-    imageText: string;
-    linkText: string;
-    title: string;
-  };
+
+interface Props {
+  post: Post;
 }
 
-export default function MainFeaturedPost(props: MainFeaturedPostProps) {
+export default function MainFeaturedPost(props: Props): ReactElement {
   const { post } = props;
 
   return (
-    <Paper
-      sx={{
-        corners: 'rounded',
-        position: 'relative',
-        backgroundColor: 'grey.800',
-        color: '#fff',
-        mb: 4,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        backgroundImage: `url(${post.image})`,
-      }}
-    >
-      <Box
+    <Link variant="subtitle1" href={`post/${post.id}`} style={{ textDecoration: 'none' }}>
+      <Paper
         sx={{
-          position: 'absolute',
-          top: 0,
-          bottom: 0,
-          right: 0,
-          left: 0,
-          backgroundColor: 'rgba(0,0,0,.3)',
+          corners: 'rounded',
+          position: 'relative',
+          backgroundColor: 'grey.800',
+          color: '#fff',
+          mb: 4,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundImage: `url(${post.image})`,
+          display: 'block',
+          height: '80vh',
         }}
-      />
-      <Grid container>
-        <Grid item md={6}>
-          <Box
-            sx={{
-              position: 'relative',
-              p: { xs: 3, md: 6 },
-              pr: { md: 0 },
-            }}
+      >
+        <div
+          style={{
+            position: 'relative',
+            marginTop: `${post.position.verticalOffset}%`,
+            marginLeft: `${post.position.alignment === 'left' ? post.position.horizontalOffset : 0}%`,
+            marginRight: `${post.position.alignment === 'right' ? post.position.horizontalOffset : 0}%`,
+            float: post.position.alignment === 'right' ? 'right' : 'left',
+          }}
+        >
+          <Typography 
+            align={post.position.alignment}
+            component="h1"
+            variant="h3"
+            color="inherit"
+            gutterBottom
           >
-            <div style={{ display: 'block', width: '100%', height: '50vh' }}>
-              <div style={{ position: 'relative', top: '30%'}}>
-                <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                  {post.title}
-                </Typography>
-                <Typography variant="h5" color="inherit" paragraph>
-                  {post.description}
-                </Typography>
-                <Link variant="subtitle1" href="#">
-                  {post.linkText}
-                </Link>
-              </div>
-            </div>
-          </Box>
-        </Grid>
-      </Grid>
-    </Paper>
+            {post.title}
+          </Typography>
+          <Typography
+            align={post.position.alignment}
+            variant="h5"
+            color="inherit"
+            paragraph
+          >
+            {post.description}
+          </Typography>
+        </div>
+      </Paper>
+    </Link>
   );
 }

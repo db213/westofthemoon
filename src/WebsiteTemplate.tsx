@@ -17,7 +17,7 @@ export default function WebsiteTemplate(props: Props) {
   return (
     <ThemeProvider theme={THEME}>
       <CssBaseline />
-      <Container maxWidth={false} disableGutters={true}>
+      <Container maxWidth={false} disableGutters={true} sx={{ display: 'block' }}>
         <Header />
         {child}
         <Footer />

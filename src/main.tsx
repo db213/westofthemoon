@@ -10,6 +10,7 @@ import WebsiteTemplate from './WebsiteTemplate.tsx';
 import ErrorPage from './ErrorPage.tsx';
 import PostsByCountry from './posts-by-country-page/PostsByCountry.tsx';
 import { ROUTES } from './routes/routes.ts';
+import { BlogPost } from './posts/BlogPost.tsx';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: ROUTES.postsByCountry,
     element: <WebsiteTemplate child={<PostsByCountry />} />,
+  },
+  {
+    path: ROUTES.specificPost + ':id',
+    element: <WebsiteTemplate child={<BlogPost />} />,
   }
 ]);
 
