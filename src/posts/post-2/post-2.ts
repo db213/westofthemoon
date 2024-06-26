@@ -5,7 +5,7 @@ import post2 from './blog-post.2.md';
 export const postNo2: Post = {
   title: 'Post 2',
   description: 'Post 2 description goes here',
-  country: 'United Kingdom',
+  country: 'Scotland',
   date: new Date('2021-10-01'),
   image: 'https://source.unsplash.com/random?wallpapers',
   content: post2,
