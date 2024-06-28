@@ -7,7 +7,7 @@ import CountryCard from "./CountryCard";
 export default function PostsByCountry(): ReactElement {
 
   return (
-    <div style={{ paddingLeft: 24, paddingRight: 24 }}>
+    <div style={{ padding: 24 }}>
       <Grid container spacing={4}>
         {
           COUNTRIES.map((country, index) => {

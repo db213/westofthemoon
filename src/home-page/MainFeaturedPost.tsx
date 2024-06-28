@@ -7,11 +7,11 @@ import { ReactElement } from 'react';
 
 interface Props {
   post: Post;
+  hasBottomMargin?: boolean;
 }
 
 export default function MainFeaturedPost(props: Props): ReactElement {
-  const { post } = props;
-
+  const { post, hasBottomMargin = false } = props;
   return (
     <Link variant="subtitle1" href={`post/${post.id}`} style={{ textDecoration: 'none' }}>
       <Paper
@@ -19,8 +19,7 @@ export default function MainFeaturedPost(props: Props): ReactElement {
           corners: 'rounded',
           position: 'relative',
           backgroundColor: 'grey.800',
-          color: '#fff',
-          mb: 4,
+          mb: hasBottomMargin ? 4 : 0,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundImage: `url(${post.image})`,
@@ -43,6 +42,9 @@ export default function MainFeaturedPost(props: Props): ReactElement {
             variant="h3"
             color="inherit"
             gutterBottom
+            sx={{
+              color: '#fff',
+            }}
           >
             {post.title}
           </Typography>
@@ -51,6 +53,9 @@ export default function MainFeaturedPost(props: Props): ReactElement {
             variant="h5"
             color="inherit"
             paragraph
+            sx={{
+              color: '#fff',
+            }}
           >
             {post.description}
           </Typography>

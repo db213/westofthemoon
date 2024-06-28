@@ -6,21 +6,21 @@ import CountryCardOverlay from "./CountryCardOverlay";
 
 interface Props {
   country: Country;
+  alwaysHovered?: boolean;
 }
 
 export default function CountryCard(props: Props): ReactElement {
-  const { country } = props;
-  const [hovered, setHovered] = useState<boolean>(false);
+  const { country, alwaysHovered = false } = props;
+  const [hovered, setHovered] = useState<boolean>(alwaysHovered);
 
   return (
     <Paper 
       onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseLeave={() => alwaysHovered ? setHovered(true) : setHovered(false)}
       sx={{
         corners: 'rounded',
         position: 'relative',
         backgroundColor: 'grey.800',
-        color: '#fff',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundImage: `url(${COUNTRY_CARDS[country].image})`,

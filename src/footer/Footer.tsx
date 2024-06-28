@@ -1,5 +1,5 @@
 import { Home, Instagram } from '@mui/icons-material';
-import { Button, Divider, Grid, Typography } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { ROUTES } from '../routes/routes';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
@@ -13,15 +13,9 @@ export default function Footer() {
       sx={{
         color: 'headerText.dark',
         bgcolor: 'background.paper',
-        py: 6
+        paddingBottom: 6
       }}
     >
-      <Divider 
-        sx={{
-          borderColor: 'headerText.light',
-          opacity: 0.5,
-        }}
-      />
       <Grid container columns={12}>
         <Grid item xs={12} md={3}>
           <Button

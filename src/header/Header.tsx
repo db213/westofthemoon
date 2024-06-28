@@ -1,6 +1,6 @@
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import { Fragment, useMemo } from 'react';
+import { useMemo } from 'react';
 import { ROUTES } from '../routes/routes';
 import { useWindowSize } from '../window-size/use-window-size';
 import WidePageMenuOptions from './WidePageMenuOptions';
@@ -16,7 +16,7 @@ export default function Header() {
   }, [innerWidth]);
 
   return (
-    <Fragment>
+    <>
       <Toolbar
         component="nav"
         variant="dense"
@@ -60,6 +60,6 @@ export default function Header() {
         </div>
         { !smallPage ? <WidePageMenuOptions /> : <SmallPageMenuOptions /> }
       </Toolbar>
-    </Fragment>
+    </>
   );
 }
