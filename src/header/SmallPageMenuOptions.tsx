@@ -1,12 +1,11 @@
 import { Button } from "@mui/material";
 import { Fragment } from "react/jsx-runtime";
 import MenuIcon from '@mui/icons-material/Menu';
-import { useState } from "react";
+import { HeaderProps } from "./Header";
 
 
-export default function SmallPageMenuOptions() {
-
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+export default function SmallPageMenuOptions(props: HeaderProps) {
+  const { setShowHamburgerMenu } = props;
 
   return (
     <Fragment>
@@ -17,7 +16,7 @@ export default function SmallPageMenuOptions() {
           height: '100%',
           padding: 0,
         }}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        onClick={() => setShowHamburgerMenu()}
       >
         <MenuIcon />  
       </Button>  

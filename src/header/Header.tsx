@@ -8,8 +8,13 @@ import { Typography } from '@mui/material';
 import SmallPageMenuOptions from './SmallPageMenuOptions';
 import Logo from '../assets/Logo';
 
-export default function Header() {
 
+export interface HeaderProps {
+  setShowHamburgerMenu: () => void;
+}
+
+export default function Header(props: HeaderProps) {
+  const { setShowHamburgerMenu } = props;
   const { innerWidth } = useWindowSize();
   const smallPage = useMemo(() => {
     return innerWidth < 630;
@@ -58,7 +63,7 @@ export default function Header() {
             </Typography>
           </Button>
         </div>
-        { !smallPage ? <WidePageMenuOptions /> : <SmallPageMenuOptions /> }
+        { !smallPage ? <WidePageMenuOptions /> : <SmallPageMenuOptions setShowHamburgerMenu={setShowHamburgerMenu} /> }
       </Toolbar>
     </>
   );
