@@ -3,7 +3,7 @@ import { postNo2 } from "./post-2/post-2";
 import { postNo3 } from "./post-3/post-3";
 
 
-export const COUNTRIES = ['Scotland', 'Norway', 'Italy', 'Switzerland'] as const;
+export const COUNTRIES = ['Scotland', 'Norway', 'Italy', 'Switzerland', 'Iceland'] as const;
 export type Country = typeof COUNTRIES[number];
 
 export interface Post {
@@ -45,6 +45,10 @@ export const COUNTRY_CARDS: Record<Country, CountryCard> = {
     image: 'https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg',
     text: 'Switzerland'
   },
+  'Iceland': {
+    image: 'https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg',
+    text: 'Iceland'
+  }
 }
 
 

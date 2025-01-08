@@ -4,6 +4,7 @@ import { Fragment } from 'react';
 
 
 export default function HomeContent() {
+  // TODO sort posts by date
   return (
     <Fragment>
       {allPosts.slice(0, 3).map((post, index) => (
